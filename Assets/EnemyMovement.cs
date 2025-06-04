@@ -5,17 +5,19 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    public float moveSpeed = 3f;
+    private float moveSpeed = 3f;
     public Transform target; // Gán Player từ Editor hoặc tự tìm trong Start
 
     private Rigidbody2D rb;
     private Vector2 movement;
     public Animator animator;
+    private Stats stats;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
+        stats = GetComponent<Stats>();
+        moveSpeed = stats.data.speed;
         // Nếu chưa gán target, tự động tìm theo tag "Player"
         if (target == null)
         {
@@ -58,6 +60,7 @@ public class EnemyMovement : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             Debug.Log("take damage");
+            other.gameObject.GetComponent<Stats>().AddHealth(-stats.data.damage);
         }
     }
 }

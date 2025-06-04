@@ -14,4 +14,10 @@ public class Stats : MonoBehaviour
         public float attackSpeed;
     }
     public Data data;
+
+    public void AddHealth(float health)
+    {
+        data.health += health;
+        
+    }
 }

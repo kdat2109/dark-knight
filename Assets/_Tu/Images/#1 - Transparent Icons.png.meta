@@ -1546,10 +1546,10 @@ TextureImporter:
       name: '#1 - Transparent Icons_67'
       rect:
         serializedVersion: 2
-        x: 96
-        y: 643
-        width: 32
-        height: 32
+        x: 113
+        y: 646
+        width: 9
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -6099,6 +6099,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: '#1 - Transparent Icons_284'
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 646
+        width: 7
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 834d9bc721e643e42a2345698931af62
+      internalID: -721736200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -6316,6 +6337,7 @@ TextureImporter:
       '#1 - Transparent Icons_281': -1129062316
       '#1 - Transparent Icons_282': 1319729808
       '#1 - Transparent Icons_283': -2088766299
+      '#1 - Transparent Icons_284': -721736200
       '#1 - Transparent Icons_29': 571095381
       '#1 - Transparent Icons_3': -183349381
       '#1 - Transparent Icons_30': -466192990
