@@ -29,6 +29,7 @@ namespace _Dat
             {
                 // Gây sát thương tại đây nếu cần
                 Debug.Log($"Đã gây {damage} lên {collision.name}");
+                collision.GetComponent<Stats>().AddHealth(-damage);
                 Destroy(gameObject);
             }
         }

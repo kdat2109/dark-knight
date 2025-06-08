@@ -54,13 +54,4 @@ public class EnemyMovement : MonoBehaviour
             animator.transform.localScale = new Vector3(1, 1, 1);
         }
     }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.gameObject.CompareTag("Player"))
-        {
-            Debug.Log("take damage");
-            other.gameObject.GetComponent<Stats>().AddHealth(-stats.data.damage);
-        }
-    }
 }
