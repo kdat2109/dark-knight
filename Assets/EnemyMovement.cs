@@ -6,12 +6,14 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     private float moveSpeed = 3f;
+    public float minRange;
     public Transform target; // Gán Player từ Editor hoặc tự tìm trong Start
 
     private Rigidbody2D rb;
     private Vector2 movement;
     public Animator animator;
     private Stats stats;
+    
 
     void Start()
     {
@@ -30,15 +32,28 @@ public class EnemyMovement : MonoBehaviour
     void FixedUpdate()
     {
         if (target == null) return;
+        float distance = Vector2.Distance(transform.position, target.position);
 
         // Tính hướng di chuyển
         Vector2 direction = (target.position - transform.position).normalized;
-        movement = direction;
-
-        // Di chuyển enemy
-        rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
         
+        if (distance > minRange)
+        {
+            movement = direction;
+            
+        }
+        else if(distance < minRange -1)
+        {
+            movement = -direction;
+        }
+        else
+        {
+            movement =Vector2.zero;
+        }
+        // Di chuyển
+        rb.MovePosition(rb.position + movement * (moveSpeed * Time.fixedDeltaTime));
         animator.SetFloat("RunState", movement.magnitude);
+
 
         FlipCharacter();
     }

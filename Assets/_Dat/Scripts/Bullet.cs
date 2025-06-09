@@ -4,6 +4,7 @@ namespace _Dat
 {
     public class Bullet : MonoBehaviour
     {
+        public string enemyTag;
         public float damage;
         public float range;
         private Vector2 startPos;
@@ -25,7 +26,7 @@ namespace _Dat
         private void OnTriggerEnter2D(Collider2D collision)
         {
             // Va chạm với enemy
-            if (collision.CompareTag("Enemy"))
+            if (collision.CompareTag(enemyTag))
             {
                 Stats stats = collision.GetComponent<Stats>();
                 stats.AddHealth(-damage);
