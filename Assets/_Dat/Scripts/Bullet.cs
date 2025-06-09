@@ -27,9 +27,10 @@ namespace _Dat
             // Va chạm với enemy
             if (collision.CompareTag("Enemy"))
             {
+                Stats stats = collision.GetComponent<Stats>();
+                stats.AddHealth(-damage);
                 // Gây sát thương tại đây nếu cần
                 Debug.Log($"Đã gây {damage} lên {collision.name}");
-                collision.GetComponent<Stats>().AddHealth(-damage);
                 Destroy(gameObject);
             }
         }

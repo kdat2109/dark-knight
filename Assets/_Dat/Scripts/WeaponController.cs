@@ -12,9 +12,19 @@ namespace _Dat
         public List<Weapon> weapons = new List<Weapon>();
         public List<Transform> slots = new List<Transform>();
         public Stats stats;
+
+        public void Equip()
+        {
+            
+        }
+
+        public void UnEquip()
+        {
+            
+        }
         private void Update()
         {
-            if (EnemyManager.Enemies.Count == 0) return;
+            if (EnemyManager.Enemies.Count == 0) return; // nếu enemy không có thì return
             foreach (Weapon weapon in weapons)
             {
                 Transform nearestEnemy = GetNearestEnemy(weapon.transform);
