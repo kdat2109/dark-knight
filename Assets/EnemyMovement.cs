@@ -14,6 +14,7 @@ public class EnemyMovement : MonoBehaviour
     public Animator animator;
     private Stats stats;
     
+    
 
     void Start()
     {
@@ -31,6 +32,7 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        
         if (target == null) return;
         float distance = Vector2.Distance(transform.position, target.position);
 

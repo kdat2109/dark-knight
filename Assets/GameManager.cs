@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     [SerializeField]
     private DamagePopup damagePopup;
+    public bool IsGameOver = false;
 
     public void ShowDamagePopup(string text, Color color,Vector3 position)
     {
@@ -15,7 +16,14 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
     
 }

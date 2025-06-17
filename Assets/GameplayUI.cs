@@ -1,0 +1,45 @@
+using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+
+public class GameplayUI : MonoBehaviour
+{
+    [SerializeField] 
+    private Stats stats;
+    [SerializeField]
+    private Image healthBar;
+    public TMP_Text textHealth;
+
+    public TMP_Text waveText;
+    public TMP_Text timeText;
+    public TMP_Text healthText;
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        SetHealth(stats.data.health,stats.max.health);
+    }
+
+    public void SetHealth(float min, float max)
+    {
+        healthBar.fillAmount =min/ max; // hiệu ứng thanh máu 
+        healthText.text = min.ToString("0.0") + "/" + max.ToString("0.0");
+    }
+
+    public void SetTime(float time)
+    {
+        timeText.text = time.ToString("0") + "s";
+    }
+
+    public void SetWave(int wave)
+    {
+        waveText.text = "Wave : " + wave.ToString();
+    }
+}

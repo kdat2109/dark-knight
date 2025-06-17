@@ -18,8 +18,6 @@ namespace _Dat
                 animator.SetTrigger("Attack");
                 timeAttack = Time.time + fireRate - stats.attackSpeed;
             }
-
-            
         }
 
         private void OnTriggerEnter2D(Collider2D other)

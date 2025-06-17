@@ -12,6 +12,7 @@ namespace _Dat
         public List<Weapon> weapons = new List<Weapon>();
         public List<Transform> slots = new List<Transform>();
         public Stats stats;
+        public bool isDead;
 
         public void Equip()
         {
@@ -24,6 +25,7 @@ namespace _Dat
         }
         private void Update()
         {
+            if (isDead) return;
             if (EnemyManager.Enemies.Count == 0) return; // nếu enemy không có thì return
             foreach (Weapon weapon in weapons)
             {

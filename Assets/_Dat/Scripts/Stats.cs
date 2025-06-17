@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using _Dat;
 using UnityEngine;
 
 public class Stats : MonoBehaviour
@@ -12,6 +13,7 @@ public class Stats : MonoBehaviour
         public float damage;
         public float speed;
         public float attackSpeed;
+        
 
         public void Copy(Data data)
         {
@@ -24,18 +26,21 @@ public class Stats : MonoBehaviour
     [HideInInspector]
     public Data max;
     public Data data;
-
-    private void Start()
-    {
-        max.Copy(data);
-    }
-
     [SerializeField]
     private bool canShowInfo;
 
     [SerializeField]
     private bool isAi;
+    
+    private void Start()
+    {
+        max.Copy(data);
+        
+    }
 
+
+    
+    
     public void AddHealth(float health)
     {
         data.health += health;
@@ -44,7 +49,6 @@ public class Stats : MonoBehaviour
             if (isAi)
             {
                 GameManager.Instance.ShowDamagePopup($"{health}", Color.white, transform.position);
-
             }
             else
             {
@@ -64,12 +68,27 @@ public class Stats : MonoBehaviour
         {
             if (isAi)
             {
-                Destroy(gameObject);
+                Die();
             }
             else
             {
                 Debug.Log("lose");
+                PlayerDead();
             }
         }
+    }
+
+   
+
+    public void PlayerDead()
+    {
+        GameManager.Instance.IsGameOver = true;
+        UIManager.Instance.ShowLosePanel();
+        GetComponent<PlayerController>().isDead = true;
+        GetComponent<WeaponController>().isDead = true;
+    }
+    public void Die()
+    {
+        Destroy(gameObject);
     }
 }

@@ -11,6 +11,8 @@
         private Vector2 moveInput;
 
         public Stats stats;
+        public bool isDead = false;
+        
 
         void Start()
         {
@@ -19,6 +21,7 @@
 
         void Update()
         {   
+            if(isDead) return;
             // Lấy input từ bàn phím
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
@@ -53,4 +56,7 @@
             // Di chuyển nhân vật
             rb.MovePosition(rb.position + moveInput * (speed * Time.fixedDeltaTime));
         }
+
+        
+        
     }

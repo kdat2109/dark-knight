@@ -21,10 +21,36 @@ namespace _Dat
         
         int currentWave = 0;
 
+       [SerializeField]
+       int maxHealth;
+       int currentHealth;
+       
+
         private void Start()
         {
-            StartCoroutine(EndWave());
+            StartWave();
+        }
+
+
+        void StartWave()
+        {
+            currentHealth = maxHealth;
+            
+            Debug.Log("▶️ Bắt đầu Wave " + currentWave);
+            
+            timePlay = 0;
+            waveIsRunning = true;
+            waveIsStopped = false;
+            
+            if (currentWave >= waves.Length)
+            {
+                Debug.Log("Hoàn thành tất cả các wave");
+            }
+
+            UIManager.Instance.gameplayUI.SetWave(currentWave + 1);
+
             StartCoroutine(SpawnEnemies(waves[currentWave]));
+            
         }
 
 
@@ -82,16 +108,87 @@ namespace _Dat
             }
         }
 
+
+        private float timePlay;
         
-        
-        
-        
-        
-        IEnumerator EndWave()
+        void Update()
         {
-            yield return new WaitForSeconds(timeEndWave);
-            StopAllCoroutines();
+            // if (timePlay >= timeEndWave)
+            // {
+            //     UIManager.Instance.gameplayUI.SetTime(0);
+            //     StopAllCoroutines();
+            //     
+            // }
+            // else
+            // {
+            //     timePlay+= Time.deltaTime;
+            //     UIManager.Instance.gameplayUI.SetTime(timeEndWave-timePlay);
+            // }
+            
+
+            if (waveIsRunning)
+            {
+                timePlay += Time.deltaTime;
+                UIManager.Instance.gameplayUI.SetTime(timeEndWave-timePlay);
+
+                if (timePlay >= timeEndWave)
+                {
+                    EndWave();
+                }
+            }else if (waveIsStopped)
+            {
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    StartWave();
+                }
+            }
         }
+
+        void EndWave()
+        {
+            Debug.Log("End wave" + currentWave + "Space để tiếp tục");
+             
+            waveIsRunning = false;
+            waveIsStopped = true;
+
+            KillAllEnemies();
+            StopAllCoroutines();
+            
+            currentWave++;
+        }
+
+        void KillAllEnemies()
+        {
+            Enemy[] enemies = FindObjectsOfType<Enemy>();
+            foreach (var enemy in enemies)
+            {
+                enemy.Die();
+            }
+        }
+        
+        private bool waveIsRunning = false;
+        private bool waveIsStopped = false;
+        
+        
+        
+        
+        
+        //todo làm hết wave thì dừng lại, quái chết hết, ấn space thì mới next wave( chỉ khi hết thời gian mới ấn đc)
+        
+        
+        
+        /*IEnumerator EndWave()
+        {
+            // yield return new WaitForSeconds(timeEndWave);
+            for (int i = 0; i < timeEndWave; i++)
+            {
+                UIManager.Instance.gameplayUI.SetTime(timeEndWave-i);
+                yield return new WaitForSeconds(1);
+            }
+            UIManager.Instance.gameplayUI.SetTime(0);
+
+            StopAllCoroutines();
+        }*/
 
     }
     [Serializable]
@@ -101,4 +198,6 @@ namespace _Dat
         public int min;
         public int max;
     }
+    
+    
 }

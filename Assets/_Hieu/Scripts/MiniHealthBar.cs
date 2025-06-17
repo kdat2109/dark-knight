@@ -10,6 +10,7 @@ public class MiniHealthBar : MonoBehaviour
     private Image fill;
     [SerializeField]
     private Stats stats;
+    
 
     private void Update()
     {
