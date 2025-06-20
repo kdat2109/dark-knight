@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     public GameplayUI gameplayUI;
+    public Shop shop;
     public int gold;
     public GameObject losePanel;
     

@@ -6,23 +6,29 @@ namespace _Dat
 {
     public class WeaponController : MonoBehaviour
     {
-        [SerializeField]
-        private Weapon weapon;
         //sau
         public List<Weapon> weapons = new List<Weapon>();
         public List<Transform> slots = new List<Transform>();
         public Stats stats;
         public bool isDead;
 
-        public void Equip()
+        // thêm vũ khí vào slots 
+        public void Equip(Weapon weapon)
         {
+            if (weapons.Count >= slots.Count)
+            {
+                Debug.Log("Đã đủ vũ khí !");
+                return;
+            }
+
+            int indexSlot = weapons.Count;
+            var wp = Instantiate(weapon,slots[indexSlot].position , Quaternion.identity);
+            wp.transform.parent = slots[indexSlot];
             
+            weapons.Add(wp);
         }
 
-        public void UnEquip()
-        {
-            
-        }
+        
         private void Update()
         {
             if (isDead) return;
@@ -44,6 +50,7 @@ namespace _Dat
             }
         }
 
+        
         private Transform GetNearestEnemy(Transform weaponTransform)
         {
             Transform nearest = null;

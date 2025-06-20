@@ -2,7 +2,7 @@
 
 namespace _Dat
 {
-    public class Weapon : MonoBehaviour
+    public class Weapon : EquipItem
     {
         public float damage;
         public float range;

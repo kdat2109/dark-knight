@@ -38,12 +38,24 @@ public class Stats : MonoBehaviour
         
     }
 
-
+    public void AddStats(Data addData)
+    {
+        data.health += addData.health;
+        data.damage += addData.damage;
+        data.speed += addData.speed;
+        data.attackSpeed += addData.attackSpeed;
+        
+        max.health += addData.health;
+        max.damage += addData.damage;
+        max.speed += addData.speed;
+        max.attackSpeed += addData.attackSpeed;
+    }
     
     
     public void AddHealth(float health)
     {
         data.health += health;
+        data.health = Mathf.Clamp(data.health, 0, max.health);
         if(canShowInfo)
         {
             if (isAi)

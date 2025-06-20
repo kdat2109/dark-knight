@@ -12,6 +12,7 @@ public class GameplayUI : MonoBehaviour
     [SerializeField]
     private Image healthBar;
     public TMP_Text textHealth;
+    public TMP_Text goldText;
 
     public TMP_Text waveText;
     public TMP_Text timeText;
@@ -41,5 +42,10 @@ public class GameplayUI : MonoBehaviour
     public void SetWave(int wave)
     {
         waveText.text = "Wave : " + wave.ToString();
+    }
+
+    public void SetGold(int gold)
+    {
+        goldText.text = "Gold: " + gold.ToString();
     }
 }
