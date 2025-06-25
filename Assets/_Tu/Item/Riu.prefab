@@ -200,16 +200,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   image: {fileID: 4583844008695552782}
   gold: 5
-  itemName: Kiem
+  itemName: Riu
   type: 0
   addStats:
     health: 0
     damage: 0
     speed: 0
     attackSpeed: 0
-  damage: 2
-  range: 2
-  fireRate: 5
+  damage: 10
+  range: 1
+  fireRate: 1
   animator: {fileID: 1893465241904177789}
 --- !u!50 &1309289976344489209
 Rigidbody2D:

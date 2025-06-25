@@ -13,14 +13,25 @@ public class Equipment : MonoBehaviour
     [SerializeField]
     private WeaponController weaponController;
     [SerializeField]
-    private EquipItem[] testEquip;
+    private EquipItem[] randomEquip;
     private void Start()
     {
         //start game thì đăng kí người chơi vơi shop
         UIManager.Instance.shop.Register(this);
-        foreach (var equipItem in testEquip)
+        
+        List<EquipItem> weapons = new List<EquipItem>();
+        foreach (var equipItem in randomEquip)
         {
-            Equip(equipItem);
+           // Equip(equipItem);
+           if (equipItem.type == EquipType.Weapon)
+           {
+               weapons.Add(equipItem);
+           }
+        }
+        if (weapons.Count > 0)
+        {
+            int index = Random.Range(0, weapons.Count);
+            Equip(weapons[index]);
         }
     }
 

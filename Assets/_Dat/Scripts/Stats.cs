@@ -31,6 +31,8 @@ public class Stats : MonoBehaviour
 
     [SerializeField]
     private bool isAi;
+
+    public int gold;
     
     private void Start()
     {
@@ -89,9 +91,7 @@ public class Stats : MonoBehaviour
             }
         }
     }
-
-   
-
+    
     public void PlayerDead()
     {
         GameManager.Instance.IsGameOver = true;
@@ -101,6 +101,9 @@ public class Stats : MonoBehaviour
     }
     public void Die()
     {
+        UIManager.Instance.AddGold(gold);
+        GameManager.Instance.ShowDamagePopup($"{gold}", Color.yellow, transform.position + Vector3.up);
         Destroy(gameObject);
+        
     }
 }

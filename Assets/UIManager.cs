@@ -7,12 +7,13 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     public GameplayUI gameplayUI;
     public Shop shop;
-    public int gold;
+    public int gold ;
     public GameObject losePanel;
     
     void Awake()
     {
         Instance = this;
+        UpdateGoldUI();
     }
 
     void Start()
@@ -24,8 +25,19 @@ public class UIManager : MonoBehaviour
     {
         losePanel.SetActive(true);
     }
-    void Update()
+
+
+    public void AddGold(int amount)
     {
-        
+        gold += amount;
+        Debug.Log("Gold : " + gold);
+        UpdateGoldUI();
     }
+
+    public void UpdateGoldUI()
+    {
+        gameplayUI.SetGold(gold);
+        shop.SetGold(gold);
+    }
+    
 }

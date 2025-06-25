@@ -24,11 +24,14 @@ namespace _Dat
        [SerializeField]
        int maxHealth;
        int currentHealth;
+       [SerializeField]
+       private Shop shop;
        
 
         private void Start()
         {
             StartWave();
+            
         }
 
 
@@ -50,6 +53,8 @@ namespace _Dat
             UIManager.Instance.gameplayUI.SetWave(currentWave + 1);
 
             StartCoroutine(SpawnEnemies(waves[currentWave]));
+            
+            shop.RollItems();
             
         }
 
@@ -134,20 +139,23 @@ namespace _Dat
                 if (timePlay >= timeEndWave)
                 {
                     EndWave();
-                }
-            }else if (waveIsStopped)
-            {
-                if (Input.GetKeyDown(KeyCode.Space))
-                {
-                    StartWave();
+                    shop.ShowShop();
+                    
                 }
             }
         }
 
-        void EndWave()
+        public void NextWave()
         {
-            Debug.Log("End wave" + currentWave + "Space để tiếp tục");
-             
+            if (waveIsStopped)
+            {
+                StartWave();
+            }
+           
+        }
+
+        public void EndWave()
+        {
             waveIsRunning = false;
             waveIsStopped = true;
 

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using _Dat;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,12 +14,24 @@ public class UpgradeUI : MonoBehaviour
     [SerializeField]
     private Image image;
     
+    [SerializeField]
+    private Button buyButton;
+
+    private EquipItem currentEquipItem;   
+    private Shop shop;
     
-    public void Init(EquipItem equipItem)
+    
+    
+    public void Init(EquipItem equipItem, Shop shop)
     {
+        this.shop = shop;
+        currentEquipItem = equipItem;
+        
         image.sprite = equipItem.image.sprite;
         goldText.text = "-" + equipItem.gold;
         itemNameText.text = equipItem.itemName;
+        
+      
         
         
         
@@ -65,8 +78,35 @@ public class UpgradeUI : MonoBehaviour
             info += "\n" + bow.bulletSpeed.ToString("0.0") + " bulletSpeed";
         }
         infoText.text = info;
+        
+        
+        buyButton.onClick.RemoveAllListeners();
+        buyButton.onClick.AddListener(Buy);
+        gameObject.SetActive(true);
+
+        UpdateButtonBuy();
+    }
+
+    public void UpdateButtonBuy()
+    {
+        var canBuy = UIManager.Instance.gold >= currentEquipItem.gold;
+        if (canBuy)
+        {
+            buyButton.interactable = true;
+        }
+        else
+        {
+            buyButton.interactable = false;
+        }
     }
     
+    private void Buy()
+    {
+        shop.Equip(currentEquipItem);
+        Debug.Log($"equip item {currentEquipItem.name}");
+        gameObject.SetActive(false);
+    }
     
+  
     
 }

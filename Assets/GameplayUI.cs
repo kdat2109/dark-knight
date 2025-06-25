@@ -46,6 +46,6 @@ public class GameplayUI : MonoBehaviour
 
     public void SetGold(int gold)
     {
-        goldText.text = "Gold: " + gold.ToString();
+        goldText.text = gold.ToString();
     }
 }
