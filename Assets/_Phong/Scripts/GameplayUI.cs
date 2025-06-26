@@ -11,16 +11,11 @@ public class GameplayUI : MonoBehaviour
     private Stats stats;
     [SerializeField]
     private Image healthBar;
-    public TMP_Text textHealth;
     public TMP_Text goldText;
 
     public TMP_Text waveText;
     public TMP_Text timeText;
     public TMP_Text healthText;
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()

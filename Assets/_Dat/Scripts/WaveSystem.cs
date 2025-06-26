@@ -20,34 +20,26 @@ namespace _Dat
         public DataWave[] waves;
         
         int currentWave = 0;
-
-       [SerializeField]
-       int maxHealth;
-       int currentHealth;
        [SerializeField]
        private Shop shop;
        
-
-        private void Start()
+       public void ResetWave()
+       {
+           waveIsRunning = false;
+           timePlay = 0;
+       }
+        public void StartWave()
         {
-            StartWave();
-            
-        }
-
-
-        void StartWave()
-        {
-            currentHealth = maxHealth;
-            
-            Debug.Log("▶️ Bắt đầu Wave " + currentWave);
+            Debug.Log("Bat dau Wave " + currentWave);
             
             timePlay = 0;
             waveIsRunning = true;
-            waveIsStopped = false;
             
             if (currentWave >= waves.Length)
             {
-                Debug.Log("Hoàn thành tất cả các wave");
+                Debug.Log("xong het wave");
+                UIManager.Instance.ShowWinPanel();
+                return;
             }
 
             UIManager.Instance.gameplayUI.SetWave(currentWave + 1);
@@ -145,9 +137,10 @@ namespace _Dat
             }
         }
 
+
         public void NextWave()
         {
-            if (waveIsStopped)
+            if (!waveIsRunning)
             {
                 StartWave();
             }
@@ -157,7 +150,6 @@ namespace _Dat
         public void EndWave()
         {
             waveIsRunning = false;
-            waveIsStopped = true;
 
             KillAllEnemies();
             StopAllCoroutines();
@@ -175,7 +167,6 @@ namespace _Dat
         }
         
         private bool waveIsRunning = false;
-        private bool waveIsStopped = false;
         
         
         
