@@ -186,8 +186,8 @@ MonoBehaviour:
     damage: 0
     speed: 0
     attackSpeed: 0
-  damage: 5
-  range: 5
+  damage: 2
+  range: 3
   fireRate: 2
   animator: {fileID: 4978171470296516709}
 --- !u!50 &3811217337079360921

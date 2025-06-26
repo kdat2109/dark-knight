@@ -139,8 +139,8 @@ MonoBehaviour:
     speed: 0
     attackSpeed: 0
   damage: 3
-  range: 10
-  fireRate: 2
+  range: 7
+  fireRate: 1
   bulletPrefab: {fileID: 8140374638537790031, guid: 87de30ac860be2d4baa00217759b7c0e, type: 3}
   firePoint: {fileID: 7590877522156818095}
   bulletSpeed: 10

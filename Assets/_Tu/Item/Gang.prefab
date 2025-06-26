@@ -103,6 +103,6 @@ MonoBehaviour:
   type: 1
   addStats:
     health: 0
-    damage: 5
+    damage: 1
     speed: 0
-    attackSpeed: 3
+    attackSpeed: 1

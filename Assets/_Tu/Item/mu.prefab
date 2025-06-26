@@ -102,7 +102,7 @@ MonoBehaviour:
   itemName: Mu
   type: 1
   addStats:
-    health: 5
+    health: 3
     damage: 1
     speed: 0
     attackSpeed: 0

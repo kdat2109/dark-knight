@@ -77,9 +77,9 @@ MonoBehaviour:
     damage: 0
     speed: 0
     attackSpeed: 0
-  damage: 2
+  damage: 1
   range: 2
-  fireRate: 1
+  fireRate: 2
   animator: {fileID: 3591915661017292158}
 --- !u!50 &4912100133432155677
 Rigidbody2D:

@@ -104,5 +104,5 @@ MonoBehaviour:
   addStats:
     health: 0
     damage: 0
-    speed: 5
+    speed: 1
     attackSpeed: 0
