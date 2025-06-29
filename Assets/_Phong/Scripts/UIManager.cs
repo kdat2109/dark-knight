@@ -51,10 +51,12 @@ public class UIManager : MonoBehaviour
     }
     public void ShowWinPanel()
     {
+        waveSystem.EndWave();
         winPanel.SetActive(true);
     }
     public void ShowLosePanel()
     {
+        waveSystem.EndWave();
         losePanel.SetActive(true);
     }
 
