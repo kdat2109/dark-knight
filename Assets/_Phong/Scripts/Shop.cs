@@ -105,6 +105,7 @@ public class Shop : MonoBehaviour
     {
         waveSystem.NextWave();
         gameObject.SetActive(false);
+        GameManager.Instance.IsGamePaused = false;
     }
 
     public void SetGold(int gold)

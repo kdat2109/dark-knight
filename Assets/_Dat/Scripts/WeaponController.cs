@@ -35,6 +35,10 @@ namespace _Dat
             if (EnemyManager.Enemies.Count == 0) return; // nếu enemy không có thì return
             foreach (Weapon weapon in weapons)
             {
+                if (weapon.isAttacking)
+                {
+                    continue;
+                }
                 Transform nearestEnemy = GetNearestEnemy(weapon.transform);
                 if (nearestEnemy == null) continue;
 
@@ -46,6 +50,7 @@ namespace _Dat
                 if (direction.magnitude <= weapon.range)
                 {
                     weapon.Attack(stats.data);
+                    weapon.SetDelayAttack();
                 }
             }
         }

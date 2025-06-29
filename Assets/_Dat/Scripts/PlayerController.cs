@@ -20,8 +20,12 @@
         }
 
         void Update()
-        {   
-            if(isDead) return;
+        {
+            if (GameManager.Instance.IsGamePaused || isDead)
+            {
+                moveInput = Vector2.zero;
+                return;
+            }
             // Lấy input từ bàn phím
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");

@@ -25,7 +25,7 @@ public class GameplayUI : MonoBehaviour
 
     public void SetHealth(float min, float max)
     {
-        healthBar.fillAmount =min/ max; // hiệu ứng thanh máu 
+        healthBar.fillAmount = min/ max; // hiệu ứng thanh máu 
         healthText.text = min.ToString("0.0") + "/" + max.ToString("0.0");
     }
 

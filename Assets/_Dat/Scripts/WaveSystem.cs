@@ -132,7 +132,7 @@ namespace _Dat
                 {
                     EndWave();
                     shop.ShowShop();
-                    
+                    GameManager.Instance.IsGamePaused = true;
                 }
             }
         }

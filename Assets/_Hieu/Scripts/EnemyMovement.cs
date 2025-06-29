@@ -13,8 +13,6 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 movement;
     public Animator animator;
     private Stats stats;
-    
-    
 
     void Start()
     {
@@ -32,8 +30,11 @@ public class EnemyMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        
-        if (target == null) return;
+        if (target == null)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
         float distance = Vector2.Distance(transform.position, target.position);
 
         // Tính hướng di chuyển

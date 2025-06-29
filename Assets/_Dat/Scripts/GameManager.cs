@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private DamagePopup damagePopup;
     public bool IsGameOver = false;
+    public bool IsGamePaused = false;
 
     public void ShowDamagePopup(string text, Color color,Vector3 position)
     {
