@@ -25,6 +25,7 @@ public class Stats : MonoBehaviour
     }
     [HideInInspector]
     public Data max;
+    private Data initData = new Data();
     public Data data;
     [SerializeField]
     private bool canShowInfo;
@@ -34,10 +35,15 @@ public class Stats : MonoBehaviour
 
     public int gold;
     
-    private void Start()
+    private void Awake()
     {
         max.Copy(data);
-        
+        initData.Copy(data);
+    }
+
+    public void Clear()
+    {
+        data.Copy(initData);
     }
 
     public void AddStats(Data addData)

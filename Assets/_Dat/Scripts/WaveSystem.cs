@@ -26,6 +26,7 @@ namespace _Dat
        public void ResetWave()
        {
            waveIsRunning = false;
+           currentWave = 0;
            timePlay = 0;
        }
         public void StartWave()

@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 3767320665547395752}
-  gold: 5
+  gold: 15
   itemName: No
   type: 0
   addStats:

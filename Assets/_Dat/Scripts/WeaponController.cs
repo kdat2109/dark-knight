@@ -12,6 +12,15 @@ namespace _Dat
         public Stats stats;
         public bool isDead;
 
+        public void Clear()
+        {
+            foreach (var weapon in weapons)
+            {
+                Destroy(weapon.gameObject);
+            }
+            weapons.Clear();
+            isDead = false;
+        }
         // thêm vũ khí vào slots 
         public void Equip(Weapon weapon)
         {

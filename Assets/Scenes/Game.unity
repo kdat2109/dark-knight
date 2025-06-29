@@ -19593,7 +19593,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &715592536
 RectTransform:
   m_ObjectHideFlags: 0
@@ -21386,6 +21386,7 @@ MonoBehaviour:
   winPanel: {fileID: 2108735885}
   menuUI: {fileID: 2012675069}
   waveSystem: {fileID: 623143064}
+  player: {fileID: 1523509263}
 --- !u!1 &1044532935
 GameObject:
   m_ObjectHideFlags: 0
@@ -34698,7 +34699,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.70980394}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.8352941}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

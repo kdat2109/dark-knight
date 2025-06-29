@@ -14,6 +14,9 @@ public class UIManager : MonoBehaviour
     public MenuUI menuUI;
     [SerializeField]
     private WaveSystem waveSystem;
+
+    [SerializeField]
+    private PlayerController player;
     
     void Awake()
     {
@@ -32,6 +35,11 @@ public class UIManager : MonoBehaviour
     {
         waveSystem.ResetWave();
         waveSystem.StartWave();
+        foreach (var enemy in EnemyManager.Enemies)
+        {
+            Destroy(enemy.gameObject);
+        }
+        player.InitPlayer();
     }
 
     public void Home()

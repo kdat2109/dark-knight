@@ -1,5 +1,6 @@
     using System.Collections;
     using System.Collections.Generic;
+    using _Dat;
     using UnityEngine;
 
     public class PlayerController : MonoBehaviour
@@ -17,6 +18,15 @@
         void Start()
         {
             rb = GetComponent<Rigidbody2D>();
+            InitPlayer();
+        }
+
+        public void InitPlayer()
+        {
+            GetComponent<WeaponController>().Clear();
+            GetComponent<Equipment>().Clear();
+            stats.Clear();
+            isDead = false;
         }
 
         void Update()

@@ -18,21 +18,6 @@ public class Equipment : MonoBehaviour
     {
         //start game thì đăng kí người chơi vơi shop
         UIManager.Instance.shop.Register(this);
-        
-        List<EquipItem> weapons = new List<EquipItem>();
-        foreach (var equipItem in randomEquip)
-        {
-           // Equip(equipItem);
-           if (equipItem.type == EquipType.Weapon)
-           {
-               weapons.Add(equipItem);
-           }
-        }
-        if (weapons.Count > 0)
-        {
-            int index = Random.Range(0, weapons.Count);
-            Equip(weapons[index]);
-        }
     }
 
     public void Equip(EquipItem equipItem)
@@ -64,9 +49,26 @@ public class Equipment : MonoBehaviour
     
     public void UnEquip()
     {
-        
     }
 
+    public void Clear()
+    {
+        items.Clear();
+        List<EquipItem> weapons = new List<EquipItem>();
+        foreach (var equipItem in randomEquip)
+        {
+            // Equip(equipItem);
+            if (equipItem.type == EquipType.Weapon)
+            {
+                weapons.Add(equipItem);
+            }
+        }
+        if (weapons.Count > 0)
+        {
+            int index = Random.Range(0, weapons.Count);
+            Equip(weapons[index]);
+        }
+    }
 }
 
 
