@@ -19,7 +19,7 @@ namespace _Dat
         
         public DataWave[] waves;
         
-        int currentWave = 0;
+        public int currentWave ;
        [SerializeField]
        private Shop shop;
        
@@ -48,6 +48,7 @@ namespace _Dat
             StartCoroutine(SpawnEnemies(waves[currentWave]));
             
             shop.RollItems();
+            
             
         }
 
@@ -172,8 +173,6 @@ namespace _Dat
         
         
         
-        
-        //todo làm hết wave thì dừng lại, quái chết hết, ấn space thì mới next wave( chỉ khi hết thời gian mới ấn đc)
         
         
         

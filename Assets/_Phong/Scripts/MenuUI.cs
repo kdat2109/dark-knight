@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class MenuUI : MonoBehaviour
 {
+    
     [SerializeField]
     private WaveSystem waveSystem;
     public void Play()
@@ -16,4 +17,6 @@ public class MenuUI : MonoBehaviour
     {
         Application.Quit();
     }
+    
+    
 }

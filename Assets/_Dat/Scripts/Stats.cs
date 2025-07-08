@@ -100,6 +100,10 @@ public class Stats : MonoBehaviour
     
     public void PlayerDead()
     {
+        if (GameManager.Instance.IsGameOver)
+        {
+            return;
+        }
         GameManager.Instance.IsGameOver = true;
         UIManager.Instance.ShowLosePanel();
         GetComponent<PlayerController>().isDead = true;

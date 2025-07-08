@@ -66,6 +66,7 @@ public class Shop : MonoBehaviour
     public void ShowShop()
     {
         gameObject.SetActive(true);
+        
 
         for (int i = parentItem.childCount - 1; i >= 0; i--)
         {

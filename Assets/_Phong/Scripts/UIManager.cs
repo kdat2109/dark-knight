@@ -56,8 +56,25 @@ public class UIManager : MonoBehaviour
     }
     public void ShowLosePanel()
     {
+        LeaderBoard.Instance.AddData(LeaderBoard.Instance.account,waveSystem.currentWave);
+        for (int i = 0; i < LeaderBoard.Instance.data.Count; i++)
+        {
+            if (LeaderBoard.Instance.data[i].account == LeaderBoard.Instance.account)
+            {
+                Debug.Log(LeaderBoard.Instance.data[i].wave);
+                break;
+            }
+        }
+        
+        for (int i = 0; i < LeaderBoard.Instance.data.Count; i++)
+        {
+            Debug.Log(LeaderBoard.Instance.data[i].account+":"+LeaderBoard.Instance.data[i].wave);
+        }
+
         waveSystem.EndWave();
+        LeaderBoard.Instance.showLeaderBoardUI();
         losePanel.SetActive(true);
+        
     }
 
 
