@@ -36,6 +36,7 @@ public class UIManager : MonoBehaviour
         player.ResetPos();
         waveSystem.ResetWave();
         waveSystem.StartWave();
+        GameManager.Instance.IsGameOver = false;
         foreach (var enemy in EnemyManager.Enemies)
         {
             Destroy(enemy.gameObject);
