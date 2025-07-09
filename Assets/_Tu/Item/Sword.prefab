@@ -27,14 +27,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2070636001650198590}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7991154, w: 0.60117763}
+  m_LocalRotation: {x: 0, y: 0, z: -0.79911315, w: 0.60118073}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3922842016088044386}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -106.091}
 --- !u!95 &3591915661017292158
 Animator:
   serializedVersion: 5
@@ -45,7 +45,7 @@ Animator:
   m_GameObject: {fileID: 2070636001650198590}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 538b2f8119a96b74496549bc5746fa66, type: 2}
+  m_Controller: {fileID: 9100000, guid: 1d6a2bd93c92a0f479476387c4beb87e, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -77,9 +77,10 @@ MonoBehaviour:
     damage: 0
     speed: 0
     attackSpeed: 0
-  damage: 1
+  damage: 5
   range: 2
   fireRate: 2
+  isAttacking: 0
   animator: {fileID: 3591915661017292158}
 --- !u!50 &4912100133432155677
 Rigidbody2D:

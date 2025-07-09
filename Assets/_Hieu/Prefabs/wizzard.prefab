@@ -234,7 +234,7 @@ MonoBehaviour:
   data:
     health: 10
     damage: 1
-    speed: 3
+    speed: 1
     attackSpeed: 1
   canShowInfo: 1
   isAi: 1
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   range: 10
-  fireRate: 1
+  fireRate: 0.5
   bulletPrefab: {fileID: 954212063354719360, guid: 269c9dc828e9fa846aed550124f4729d, type: 3}
   firePoint: {fileID: 698287435581447598}
   bulletSpeed: 5

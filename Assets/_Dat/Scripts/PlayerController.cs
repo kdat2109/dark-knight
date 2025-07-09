@@ -13,12 +13,25 @@
 
         public Stats stats;
         public bool isDead = false;
+        Vector3 startPos;
         
 
         void Start()
         {
+            startPos = transform.position;
             rb = GetComponent<Rigidbody2D>();
             InitPlayer();
+        }
+
+        public void ResetPos()
+        {
+            transform.position = startPos;
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                    rb.velocity = Vector2.zero;
+                    rb.angularVelocity = 0f;
+            }
         }
 
         public void InitPlayer()
@@ -70,7 +83,4 @@
             // Di chuyển nhân vật
             rb.MovePosition(rb.position + moveInput * (speed * Time.fixedDeltaTime));
         }
-
-        
-        
     }

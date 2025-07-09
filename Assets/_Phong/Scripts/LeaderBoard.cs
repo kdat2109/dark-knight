@@ -89,7 +89,7 @@ public class LeaderBoard : MonoBehaviour
         {
             GameObject go = Instantiate(leaderBoardItemPrefab, leaderBoardContentParent);
             LeaderBoardUI item =  go.GetComponent<LeaderBoardUI>();
-            item.SetData(d.account, d.wave);
+            item.SetData(d.account, d.wave + 1);
         }
     }
 

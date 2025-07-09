@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour
     
     public void RestartGame()
     {
+        player.ResetPos();
         waveSystem.ResetWave();
         waveSystem.StartWave();
         foreach (var enemy in EnemyManager.Enemies)

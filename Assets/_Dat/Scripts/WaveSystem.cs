@@ -134,6 +134,7 @@ namespace _Dat
                 {
                     EndWave();
                     shop.ShowShop();
+                    shop.RollItems();
                     GameManager.Instance.IsGamePaused = true;
                 }
             }
@@ -156,6 +157,7 @@ namespace _Dat
             KillAllEnemies();
             StopAllCoroutines();
             
+            
             currentWave++;
         }
 
@@ -165,6 +167,12 @@ namespace _Dat
             foreach (var enemy in enemies)
             {
                 enemy.Die();
+            }
+            
+            Bullet[] bullets = FindObjectsOfType<Bullet>();
+            foreach (var bullet in bullets)
+            {
+                Destroy(bullet.gameObject);
             }
         }
         
