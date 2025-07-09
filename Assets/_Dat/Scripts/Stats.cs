@@ -32,6 +32,8 @@ public class Stats : MonoBehaviour
 
     [SerializeField]
     private bool isAi;
+    [SerializeField]
+    private GameObject vfx;
 
     public int gold;
     
@@ -69,6 +71,11 @@ public class Stats : MonoBehaviour
             if (isAi)
             {
                 GameManager.Instance.ShowDamagePopup($"{health}", Color.white, transform.position);
+                if (vfx)
+                {
+                    var cloneVfx = Instantiate(vfx, transform.position, Quaternion.identity);
+                    Destroy(cloneVfx,2);
+                }
             }
             else
             {

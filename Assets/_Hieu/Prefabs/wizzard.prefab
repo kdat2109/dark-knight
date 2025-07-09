@@ -238,6 +238,7 @@ MonoBehaviour:
     attackSpeed: 1
   canShowInfo: 1
   isAi: 1
+  vfx: {fileID: 5061618177333615634, guid: 049d26a5b169b354986b5b2a87fc0cb0, type: 3}
   gold: 2
 --- !u!114 &4252977031222285854
 MonoBehaviour:
