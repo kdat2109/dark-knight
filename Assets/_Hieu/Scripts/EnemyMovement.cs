@@ -14,6 +14,8 @@ public class EnemyMovement : MonoBehaviour
     public Animator animator;
     private Stats stats;
 
+    public bool canMove = true;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,6 +35,15 @@ public class EnemyMovement : MonoBehaviour
         if (target == null)
         {
             rb.velocity = Vector2.zero;
+        animator.SetFloat("RunState", 0);
+            return;
+        }
+
+        if (!canMove)
+        {
+            rb.velocity = Vector2.zero;
+        animator.SetFloat("RunState", 0);
+            
             return;
         }
         float distance = Vector2.Distance(transform.position, target.position);

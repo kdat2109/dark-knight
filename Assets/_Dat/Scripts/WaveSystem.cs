@@ -22,6 +22,8 @@ namespace _Dat
         public int currentWave ;
        [SerializeField]
        private Shop shop;
+
+       private GameObject currentBoss;
        
        public void ResetWave()
        {
@@ -81,6 +83,12 @@ namespace _Dat
         
         IEnumerator SpawnEnemies(DataWave wave)
         {
+            if (wave.boss)
+            {
+                int indexPoint = Random.Range(0, spawnPoint.Length);
+                Vector2 baseSpawnPos = spawnPoint[indexPoint].position;
+                currentBoss = Instantiate(wave.boss, baseSpawnPos, Quaternion.identity);
+            }
             while (true)
             {
                 yield return new WaitForSeconds(timeSpawn);    
@@ -130,7 +138,7 @@ namespace _Dat
                 timePlay += Time.deltaTime;
                 UIManager.Instance.gameplayUI.SetTime(timeEndWave-timePlay);
 
-                if (timePlay >= timeEndWave)
+                if (timePlay >= timeEndWave && currentBoss == null)
                 {
                     EndWave();
                     shop.ShowShop();
@@ -201,6 +209,7 @@ namespace _Dat
     [Serializable]
     public class DataWave
     {
+        public GameObject boss;
         public GameObject[] enemies;
         public int min;
         public int max;

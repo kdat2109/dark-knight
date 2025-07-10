@@ -16,7 +16,20 @@ public class GameplayUI : MonoBehaviour
     public TMP_Text waveText;
     public TMP_Text timeText;
     public TMP_Text healthText;
+    [SerializeField]
+    private MiniHealthBar bossHealthBar;
 
+    public void InitBossHealthBar(Stats stats)
+    {
+        bossHealthBar.stats = stats;
+        bossHealthBar.gameObject.SetActive(true);
+    }
+    
+    public void HideBossHealthBar()
+    {
+        if(bossHealthBar)
+            bossHealthBar.gameObject.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
@@ -43,4 +56,5 @@ public class GameplayUI : MonoBehaviour
     {
         goldText.text = gold.ToString();
     }
+
 }

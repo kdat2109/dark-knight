@@ -11,7 +11,10 @@ public class Login : MonoBehaviour
       {
             string username = inputName.text;
             Debug.Log("account : " +username);
+            if(string.IsNullOrEmpty(username))
+                  return;
             LeaderBoard.Instance.account = username;
+
             gameObject.SetActive(false);
       }
 

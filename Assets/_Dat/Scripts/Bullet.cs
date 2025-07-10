@@ -9,6 +9,8 @@ namespace _Dat
         public float range;
         private Vector2 startPos;
 
+        [SerializeField]
+        private GameObject vfx;
         void Start()
         {
             startPos = transform.position;
@@ -19,7 +21,13 @@ namespace _Dat
             // Tự hủy nếu đi quá tầm
             if (Vector2.Distance(startPos, transform.position) > range)
             {
+                if (vfx)
+                {
+                    var clVfx = Instantiate(vfx,transform.position,Quaternion.identity);
+                    Destroy(clVfx,1);
+                }
                 Destroy(gameObject);
+
             }
         }
 
@@ -32,7 +40,13 @@ namespace _Dat
                 stats.AddHealth(-damage);
                 // Gây sát thương tại đây nếu cần
                 Debug.Log($"Đã gây {damage} lên {collision.name}");
+                if (vfx)
+                {
+                    var clVfx = Instantiate(vfx,transform.position,Quaternion.identity);
+                    Destroy(clVfx,1);
+                }   
                 Destroy(gameObject);
+
             }
         }
     }
