@@ -18909,7 +18909,7 @@ MonoBehaviour:
   timeSpawn: 2
   timeEndWave: 30
   waves:
-  - boss: {fileID: 2106860626327892365, guid: 44d4fcd81ab048c438e011e34b103824, type: 3}
+  - boss: {fileID: 0}
     enemies:
     - {fileID: 8197595208149990058, guid: 46a773fb83d14e54890a46a0975e8289, type: 3}
     min: 1
@@ -18934,14 +18934,14 @@ MonoBehaviour:
     - {fileID: 3692133609998718241, guid: a3eed464a8e6a324ebadfd7a027062cc, type: 3}
     min: 3
     max: 5
-  - boss: {fileID: 2106860626327892365, guid: 44d4fcd81ab048c438e011e34b103824, type: 3}
+  - boss: {fileID: 0}
     enemies:
     - {fileID: 4787930936725677545, guid: ebf453032950d6244bab153211a60678, type: 3}
     - {fileID: 2047367721213285967, guid: f83868a22def1f7429424f275b642c39, type: 3}
     - {fileID: 8197595208149990058, guid: cb5f59603adbb7e4d85274788bb8c91e, type: 3}
     min: 3
     max: 5
-  - boss: {fileID: 0}
+  - boss: {fileID: 2106860626327892365, guid: 44d4fcd81ab048c438e011e34b103824, type: 3}
     enemies:
     - {fileID: 4787930936725677545, guid: ebf453032950d6244bab153211a60678, type: 3}
     - {fileID: 2047367721213285967, guid: f83868a22def1f7429424f275b642c39, type: 3}

@@ -10,7 +10,8 @@ public class MenuUI : MonoBehaviour
     {
         gameObject.SetActive(false);
         UIManager.Instance.gameplayUI.gameObject.SetActive(true);
-        waveSystem.StartWave();
+        // waveSystem.StartWave();
+        UIManager.Instance.RestartGame();
     }
 
     public void Quit()
