@@ -2198,6 +2198,7 @@ MonoBehaviour:
   minRange: 1
   target: {fileID: 0}
   animator: {fileID: 8830477384976844560}
+  canMove: 1
 --- !u!50 &5896054252585927411
 Rigidbody2D:
   serializedVersion: 4
@@ -2278,7 +2279,7 @@ MonoBehaviour:
     speed: 0
     attackSpeed: 0
   data:
-    health: 100
+    health: 1000
     damage: 1
     speed: 1.5
     attackSpeed: 1

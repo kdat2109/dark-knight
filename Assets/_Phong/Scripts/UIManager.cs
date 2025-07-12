@@ -42,6 +42,7 @@ public class UIManager : MonoBehaviour
             Destroy(enemy.gameObject);
         }
         player.InitPlayer();
+        SetGold(10);
     }
 
     public void Home()
@@ -83,6 +84,13 @@ public class UIManager : MonoBehaviour
     public void AddGold(int amount)
     {
         gold += amount;
+        Debug.Log("Gold : " + gold);
+        UpdateGoldUI();
+    }
+
+    public void SetGold(int amount)
+    {
+        gold = amount;
         Debug.Log("Gold : " + gold);
         UpdateGoldUI();
     }

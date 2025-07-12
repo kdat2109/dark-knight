@@ -46,6 +46,7 @@ public class Stats : MonoBehaviour
     public void Clear()
     {
         data.Copy(initData);
+        max.Copy(initData);
     }
 
     public void AddStats(Data addData)

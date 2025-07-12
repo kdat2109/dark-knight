@@ -1050,7 +1050,7 @@ MonoBehaviour:
     speed: 0
     attackSpeed: 0
   data:
-    health: 300
+    health: 3000
     damage: 1
     speed: 1.5
     attackSpeed: 1
