@@ -9,6 +9,24 @@ public class GameManager : MonoBehaviour
     private DamagePopup damagePopup;
     public bool IsGameOver = false;
     public bool IsGamePaused = false;
+    public DataPlayer Profile { get; set; }
+
+    public void SaveData(int wave,List<string> items)
+    {
+        Profile.currentWave = wave;
+        if (wave == 0)
+        {
+            Profile.gold = 10;
+        }
+        else
+        {
+            Profile.gold = UIManager.Instance.gold;
+        }
+        
+        Profile.dataEquip = new List<string>(items);
+
+        FirebaseManager.Instance.SetData();
+    }
 
     public void ShowDamagePopup(string text, Color color,Vector3 position)
     {

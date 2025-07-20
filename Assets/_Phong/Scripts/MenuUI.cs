@@ -11,7 +11,14 @@ public class MenuUI : MonoBehaviour
         gameObject.SetActive(false);
         UIManager.Instance.gameplayUI.gameObject.SetActive(true);
         // waveSystem.StartWave();
+
         UIManager.Instance.RestartGame();
+        waveSystem.NextWave();
+        if (GameManager.Instance.Profile.currentWave > 0)
+        {
+            waveSystem.ForceEndWave();
+        }
+        UIManager.Instance.shop.LoadEquipment(GameManager.Instance.Profile.dataEquip);
     }
 
     public void Quit()

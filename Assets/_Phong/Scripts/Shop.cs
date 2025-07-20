@@ -38,6 +38,30 @@ public class Shop : MonoBehaviour
     {
         equipment = equip;
     }
+
+    public void LoadEquipment(List<string> data)
+    {
+        if (data.Count > 0)
+        {
+            equipment.Clear();
+        }
+        for (int j = 0; j < data.Count; j++)
+        {
+            for (int i = 0; i < totalItems.Length; i++)
+            {
+                if (data[j] == totalItems[i].name)
+                {
+                    equipment.Equip(totalItems[i]);
+                    break;
+                }
+            }
+        }
+    }
+
+    public List<string> SaveEquipment()
+    {
+        return equipment.GetEquipItems();
+    }
     private void Start()
     {
         ShowShop();
@@ -46,7 +70,7 @@ public class Shop : MonoBehaviour
         rollButton.onClick.AddListener(RollItems);
         goWave.onClick.AddListener(NextWave);
     }
-
+    
     public void Equip(EquipItem item)
     {
         UIManager.Instance.AddGold(-item.gold);

@@ -25,7 +25,7 @@ public class LeaderBoard : MonoBehaviour
 
     void Awake()
     {
-        LoadData();
+        //LoadData();
         Instance = this;
     }
 
@@ -38,14 +38,14 @@ public class LeaderBoard : MonoBehaviour
                 if (wave > data[i].wave)
                 {
                     data[i].wave = wave;
-                    SaveData();
+                    //SaveData();
                 }
                 return;
             }
         }
         
         data.Add(new Data() { account = account, wave = wave });
-        SaveData();
+        //SaveData();
     }
 
     public void SaveData()

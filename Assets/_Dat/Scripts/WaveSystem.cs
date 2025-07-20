@@ -30,6 +30,13 @@ namespace _Dat
            waveIsRunning = false;
            currentWave = 0;
            timePlay = 0;
+           GameManager.Instance.SaveData(0,new List<string>());
+       }
+       public void SetWave(int wave)
+       {
+           waveIsRunning = false;
+           currentWave = wave;
+           timePlay = 0;
        }
         public void StartWave()
         {
@@ -120,19 +127,6 @@ namespace _Dat
         
         void Update()
         {
-            // if (timePlay >= timeEndWave)
-            // {
-            //     UIManager.Instance.gameplayUI.SetTime(0);
-            //     StopAllCoroutines();
-            //     
-            // }
-            // else
-            // {
-            //     timePlay+= Time.deltaTime;
-            //     UIManager.Instance.gameplayUI.SetTime(timeEndWave-timePlay);
-            // }
-            
-
             if (waveIsRunning)
             {
                 timePlay += Time.deltaTime;
@@ -140,7 +134,9 @@ namespace _Dat
 
                 if (timePlay >= timeEndWave && currentBoss == null)
                 {
+                    var allItem = shop.SaveEquipment();
                     EndWave();
+                    GameManager.Instance.SaveData(currentWave,allItem);
                     shop.ShowShop();
                     shop.RollItems();
                     GameManager.Instance.IsGamePaused = true;
@@ -148,6 +144,15 @@ namespace _Dat
             }
         }
 
+        public void ForceEndWave()
+        {
+            waveIsRunning = false;
+            KillAllEnemies();
+            StopAllCoroutines();
+            shop.ShowShop();
+            shop.RollItems();
+            GameManager.Instance.IsGamePaused = true;
+        }
 
         public void NextWave()
         {

@@ -33,8 +33,9 @@ public class UIManager : MonoBehaviour
     
     public void RestartGame()
     {
+        var data = GameManager.Instance.Profile;
         player.ResetPos();
-        waveSystem.ResetWave();
+        waveSystem.SetWave(data.currentWave);
         waveSystem.StartWave();
         GameManager.Instance.IsGameOver = false;
         foreach (var enemy in EnemyManager.Enemies)
@@ -42,7 +43,7 @@ public class UIManager : MonoBehaviour
             Destroy(enemy.gameObject);
         }
         player.InitPlayer();
-        SetGold(10);
+        SetGold(data.gold);
     }
 
     public void Home()
@@ -59,25 +60,16 @@ public class UIManager : MonoBehaviour
     }
     public void ShowLosePanel()
     {
+        GameManager.Instance.SaveData(0,new List<string>());
         LeaderBoard.Instance.AddData(LeaderBoard.Instance.account,waveSystem.currentWave);
-        for (int i = 0; i < LeaderBoard.Instance.data.Count; i++)
-        {
-            if (LeaderBoard.Instance.data[i].account == LeaderBoard.Instance.account)
-            {
-                Debug.Log(LeaderBoard.Instance.data[i].wave);
-                break;
-            }
-        }
-        
-        for (int i = 0; i < LeaderBoard.Instance.data.Count; i++)
-        {
-            Debug.Log(LeaderBoard.Instance.data[i].account+":"+LeaderBoard.Instance.data[i].wave);
-        }
-
+        FirebaseManager.Instance.GetLeaderBoardData(SyncLeaderBoard);
         waveSystem.EndWave();
-        LeaderBoard.Instance.showLeaderBoardUI();
         losePanel.SetActive(true);
-        
+    }
+
+    private void SyncLeaderBoard()
+    {
+        LeaderBoard.Instance.showLeaderBoardUI();
     }
 
 

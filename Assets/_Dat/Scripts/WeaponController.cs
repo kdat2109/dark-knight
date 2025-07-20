@@ -33,7 +33,7 @@ namespace _Dat
             int indexSlot = weapons.Count;
             var wp = Instantiate(weapon,slots[indexSlot].position , Quaternion.identity);
             wp.transform.parent = slots[indexSlot];
-            
+            wp.gameObject.name = weapon.gameObject.name;
             weapons.Add(wp);
         }
 

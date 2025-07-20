@@ -20,6 +20,20 @@ public class Equipment : MonoBehaviour
         UIManager.Instance.shop.Register(this);
     }
 
+    public List<string> GetEquipItems()
+    {
+        var result = new List<string>();
+        for (int i = 0; i < items.Count; i++)
+        {
+            result.Add(items[i].name);
+        }
+
+        for (int i = 0; i < weaponController.weapons.Count; i++)
+        {
+            result.Add(weaponController.weapons[i].name);
+        }
+        return result;
+    }
     public void Equip(EquipItem equipItem)
     {
         switch (equipItem.type)
@@ -51,7 +65,7 @@ public class Equipment : MonoBehaviour
     {
     }
 
-    public void Clear()
+    public void ClearAndReset()
     {
         items.Clear();
         List<EquipItem> weapons = new List<EquipItem>();
@@ -68,6 +82,12 @@ public class Equipment : MonoBehaviour
             int index = Random.Range(0, weapons.Count);
             Equip(weapons[index]);
         }
+    }
+
+    public void Clear()
+    {
+        items.Clear();
+        weaponController.Clear();
     }
 }
 

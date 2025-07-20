@@ -37,7 +37,7 @@
         public void InitPlayer()
         {
             GetComponent<WeaponController>().Clear();
-            GetComponent<Equipment>().Clear();
+            GetComponent<Equipment>().ClearAndReset();
             stats.Clear();
             isDead = false;
         }
