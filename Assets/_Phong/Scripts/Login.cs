@@ -34,7 +34,7 @@ public class Login : MonoBehaviour
             string email = nameReg.text;
             string password = passReg.text;
 
-            auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWithOnMainThread(task =>
+            auth.CreateUserWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
             {
                   if (task.IsCanceled || task.IsFaulted)
                   {
@@ -46,18 +46,26 @@ public class Login : MonoBehaviour
                         FirebaseUser newUser = task.Result.User;
                         Debug.Log("Đăng ký thành công: " + newUser.Email);
                         UpdateMessage("Đăng ký thành công: " + newUser.Email);
-                        GameManager.Instance.Profile = new DataPlayer()
+                        UnityMainThreadDispatcher.Instance().Enqueue(() =>
                         {
-                              name = playerName.text,
-                              gold = 10,
-                              currentWave = 0,
-                              maxWave = 0,
-                        };
-                        string userId = auth.CurrentUser.UserId;
-                        var json = JsonConvert.SerializeObject(GameManager.Instance.Profile);
-                        FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(userId)
-                              .SetRawJsonValueAsync(json);
-                        registerPanel.SetActive(true);
+                              GameManager.Instance.Profile = new DataPlayer()
+                              {
+                                    name = playerName.text,
+                                    gold = 10,
+                                    currentWave = 0,
+                                    maxWave = 0,
+                              };
+                              string userId = auth.CurrentUser.UserId;
+                              var json = JsonConvert.SerializeObject(GameManager.Instance.Profile);
+                              FirebaseDatabase.DefaultInstance.RootReference.Child("users").Child(userId)
+                                    .SetRawJsonValueAsync(json).ContinueWithOnMainThread(t =>
+                                    {
+                                          Debug.Log("set value: "+t.Exception);
+                                    });
+                              registerPanel.SetActive(false);
+                              inputName.text = nameReg.text;
+                              inputPass.text = passReg.text;
+                        });
                   }
             });
       }
@@ -70,6 +78,7 @@ public class Login : MonoBehaviour
                   if (task.Result == DependencyStatus.Available)
                   {
                         auth = FirebaseAuth.DefaultInstance;
+                        Debug.Log("init firebase success");
                   }
                   else
                   {
@@ -95,7 +104,8 @@ public class Login : MonoBehaviour
                         var user = task.Result.User;
                         Debug.Log("Đăng nhập thành công: " + user.Email);
                         UpdateMessage("Chào mừng: " + user.Email);
-                        UnityMainThreadDispatcher.Instance().Enqueue(() => {
+                        UnityMainThreadDispatcher.Instance().Enqueue(() =>
+                        {
                               FirebaseManager.Instance.Init();
                               FirebaseManager.Instance.LoadData(() =>
                               {
@@ -103,8 +113,8 @@ public class Login : MonoBehaviour
                                     wellcomeText.text = $"Chào mừng trở lại {playerName}";
                                     gameObject.SetActive(false);
                               });
- 
                         });
+
                   }
             });
       }

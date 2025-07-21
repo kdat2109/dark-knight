@@ -60,8 +60,9 @@ public class UIManager : MonoBehaviour
     }
     public void ShowLosePanel()
     {
+        GameManager.Instance.SetMaxWaveData(waveSystem.currentWave);
         GameManager.Instance.SaveData(0,new List<string>());
-        LeaderBoard.Instance.AddData(LeaderBoard.Instance.account,waveSystem.currentWave);
+        LeaderBoard.Instance.AddData(GameManager.Instance.Profile.name,waveSystem.currentWave);
         FirebaseManager.Instance.GetLeaderBoardData(SyncLeaderBoard);
         waveSystem.EndWave();
         losePanel.SetActive(true);

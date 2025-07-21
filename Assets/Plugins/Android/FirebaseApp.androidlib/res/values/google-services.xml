@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/firebase_database_url,@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_web_client_id">
+  <string name="firebase_database_url" translatable="false">https://dark-knight-b7e4e-default-rtdb.asia-southeast1.firebasedatabase.app</string>
+  <string name="gcm_defaultSenderId" translatable="false">913766920647</string>
+  <string name="google_storage_bucket" translatable="false">dark-knight-b7e4e.firebasestorage.app</string>
+  <string name="project_id" translatable="false">dark-knight-b7e4e</string>
+  <string name="google_api_key" translatable="false">AIzaSyBbH-ShqqRwK4Fosq-25IMKfcOge4nc0mk</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBbH-ShqqRwK4Fosq-25IMKfcOge4nc0mk</string>
+  <string name="google_app_id" translatable="false">1:913766920647:android:dd0042bdde2065e7f2e9e2</string>
+  <string name="default_web_client_id" translatable="false">913766920647-43lfdpthsfc9arpec6p8me14h5hrspt9.apps.googleusercontent.com</string>
+</resources>

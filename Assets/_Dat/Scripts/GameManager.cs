@@ -28,6 +28,14 @@ public class GameManager : MonoBehaviour
         FirebaseManager.Instance.SetData();
     }
 
+    public void SetMaxWaveData(int wave)
+    {
+        if(Profile.maxWave <  wave)
+        {
+            Profile.maxWave = wave;
+        }
+    }
+
     public void ShowDamagePopup(string text, Color color,Vector3 position)
     {
         Instantiate(damagePopup, position, Quaternion.identity).Show(text, color);
