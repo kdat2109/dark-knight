@@ -12,6 +12,7 @@ namespace _Dat
         private float delay = .5f;
         private float delayRate = 0;
 
+
         public virtual void Attack(Stats.Data stats)
         {
             float totalDamage = stats.damage + damage;

@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +12,21 @@ public class GameManager : MonoBehaviour
     public bool IsGameOver = false;
     public bool IsGamePaused = false;
     public DataPlayer Profile { get; set; }
+
+    public PlayableDirector playableDirector;
+
+    public void PlayIntro(Action complete)
+    {
+        StartCoroutine(StartIntro(complete));
+    }
+
+    IEnumerator StartIntro(Action complete)
+    {
+        playableDirector.gameObject.SetActive(true);
+        yield return new WaitUntil(() => playableDirector.time >= playableDirector.duration-0.25f);
+        playableDirector.gameObject.SetActive(false);
+        complete();
+    }
 
     public void SaveData(int wave,List<string> items)
     {

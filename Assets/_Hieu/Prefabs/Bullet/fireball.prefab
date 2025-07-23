@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 8082076796008401999}
   - component: {fileID: 7220705506162764705}
   - component: {fileID: 5837184825297207251}
+  - component: {fileID: 4868448616525181158}
+  - component: {fileID: -4851943262685659855}
   m_Layer: 0
   m_Name: fireball
   m_TagString: Untagged
@@ -75,7 +77,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 5
   m_Sprite: {fileID: -1758129325, guid: 8b0c612cb7d9f8041aa94ded305940b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -169,3 +171,29 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.78125, y: 0.4375}
   m_EdgeRadius: 0
+--- !u!114 &4868448616525181158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543806810071249611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96faba12594fcb940af3dda6b6ab5724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}
+--- !u!114 &-4851943262685659855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543806810071249611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96faba12594fcb940af3dda6b6ab5724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 0}

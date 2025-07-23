@@ -12,6 +12,7 @@ public class Bow : Weapon
     public float bulletSpeed = 20f;
 
     private float nextFireTime = 0f;
+    public AudioClip audioAttack;
 
 
     public override void Attack(Stats.Data stats)
@@ -20,7 +21,9 @@ public class Bow : Weapon
             return;
 
         nextFireTime = Time.time + 1f / fireRate;
-
+        
+        SoundManager.PlaySound(audioAttack);
+        
         float totalDamage = stats.damage + damage;
 
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);

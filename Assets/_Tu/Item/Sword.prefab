@@ -82,6 +82,8 @@ MonoBehaviour:
   fireRate: 2
   isAttacking: 0
   animator: {fileID: 3591915661017292158}
+  audioCol: {fileID: 8300000, guid: 650a0cb529dda504b95edd9928bcb021, type: 3}
+  audioAttack: {fileID: 8300000, guid: 8b23b175a78d6b5458322e3a6c9905d0, type: 3}
 --- !u!50 &4912100133432155677
 Rigidbody2D:
   serializedVersion: 4

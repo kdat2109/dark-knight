@@ -8,6 +8,7 @@ namespace _Dat
         float totalDamage;
         [SerializeField]
         Animator animator;
+        public AudioClip audioCol,audioAttack;
 
         private float timeAttack;
         public override void Attack(Stats.Data stats)
@@ -17,6 +18,7 @@ namespace _Dat
                 totalDamage = stats.damage + damage;
                 animator.SetTrigger("Attack");
                 timeAttack = Time.time + fireRate - stats.attackSpeed;
+                SoundManager.PlaySound(audioAttack);
             }
         }
 
@@ -26,6 +28,7 @@ namespace _Dat
             {
                 Stats stats = other.GetComponent<Stats>();
                 stats.AddHealth(-totalDamage);
+                SoundManager.PlaySound(audioCol);
             }
         }
     }

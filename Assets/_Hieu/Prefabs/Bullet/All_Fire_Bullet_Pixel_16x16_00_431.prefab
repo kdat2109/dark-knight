@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3763160338796907481}
   - component: {fileID: 3449598053329388064}
   - component: {fileID: 7288791668450830553}
+  - component: {fileID: 1660337808980273418}
   m_Layer: 0
   m_Name: All_Fire_Bullet_Pixel_16x16_00_431
   m_TagString: Untagged
@@ -199,3 +200,16 @@ MonoBehaviour:
   speed: 5
   nearTarget: 1.5
   damage: 10
+--- !u!114 &1660337808980273418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2210346539984342469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96faba12594fcb940af3dda6b6ab5724, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audio: {fileID: 8300000, guid: a652877b012108e41871f867ada9f176, type: 3}

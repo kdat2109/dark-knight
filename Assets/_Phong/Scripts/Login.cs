@@ -91,6 +91,10 @@ public class Login : MonoBehaviour
       {
             string email = inputName.text;
             string password = inputPass.text;
+            if (!email.Contains("@"))
+            {
+                  email += "@gmail.com";
+            }
 
             auth.SignInWithEmailAndPasswordAsync(email, password).ContinueWith(task =>
             {

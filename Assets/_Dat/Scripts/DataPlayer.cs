@@ -9,4 +9,6 @@ public class DataPlayer
     public int gold;
     public int currentWave;
     public List<string> dataEquip = new List<string>();
+
+    public bool isNewGame = true;
 }

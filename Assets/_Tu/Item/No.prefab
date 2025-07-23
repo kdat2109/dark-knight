@@ -177,3 +177,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 8140374638537790031, guid: 87de30ac860be2d4baa00217759b7c0e, type: 3}
   firePoint: {fileID: 418943978644541454}
   bulletSpeed: 10
+  audioAttack: {fileID: 8300000, guid: 650a0cb529dda504b95edd9928bcb021, type: 3}
