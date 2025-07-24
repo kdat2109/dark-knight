@@ -87,6 +87,18 @@ public class Login : MonoBehaviour
             });
       }
 
+
+      public void Logout()
+      {
+            auth.SignOut();
+            gameObject.SetActive(true);
+            playerName.text = "";
+            inputPass.text = "";
+            nameReg.text = "";
+            passReg.text = "";
+            inputName.text = "";
+      }
+
       public void LoginGame()
       {
             string email = inputName.text;
