@@ -73,7 +73,7 @@ public class Login : MonoBehaviour
 
       void Awake()
       {
-            FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task =>
+            FirebaseApp.CheckAndFixDependenciesAsync().ContinueWith(task => //khởi động firebase
             {
                   if (task.Result == DependencyStatus.Available)
                   {

@@ -1,37 +1,27 @@
 {
   "project_info": {
-    "project_number": "913766920647",
-    "firebase_url": "https://dark-knight-b7e4e-default-rtdb.asia-southeast1.firebasedatabase.app",
-    "project_id": "dark-knight-b7e4e",
-    "storage_bucket": "dark-knight-b7e4e.firebasestorage.app"
+    "project_number": "591552213294",
+    "firebase_url": "https://doan-darkkk-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "doan-darkkk",
+    "storage_bucket": "doan-darkkk.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:913766920647:android:dd0042bdde2065e7f2e9e2",
+        "mobilesdk_app_id": "1:591552213294:android:d0bdf9e915ec0a01024abf",
         "android_client_info": {
-          "package_name": "com.tin.darkknight"
+          "package_name": "com.dat.doan"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "913766920647-43lfdpthsfc9arpec6p8me14h5hrspt9.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyBbH-ShqqRwK4Fosq-25IMKfcOge4nc0mk"
+          "current_key": "AIzaSyB2NCOj4ELGlZDMF4dG89jKfivZH31Wsec"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "913766920647-43lfdpthsfc9arpec6p8me14h5hrspt9.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }

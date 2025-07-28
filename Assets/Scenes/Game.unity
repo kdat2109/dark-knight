@@ -25584,15 +25584,15 @@ MonoBehaviour:
     enemies:
     - {fileID: 8197595208149990058, guid: 46a773fb83d14e54890a46a0975e8289, type: 3}
     - {fileID: 525261201150526734, guid: 589fdee260fcf8d42804e8f1533c54c3, type: 3}
-    min: 2
-    max: 3
+    min: 1
+    max: 2
   - boss: {fileID: 4320815224669712512, guid: a99a5de5bf2d0d0489cc7e0f24e75f2b, type: 3}
     enemies:
     - {fileID: 8197595208149990058, guid: 46a773fb83d14e54890a46a0975e8289, type: 3}
     - {fileID: 525261201150526734, guid: 589fdee260fcf8d42804e8f1533c54c3, type: 3}
     - {fileID: 8197595208149990058, guid: cb5f59603adbb7e4d85274788bb8c91e, type: 3}
-    min: 3
-    max: 5
+    min: 1
+    max: 2
   - boss: {fileID: 0}
     enemies:
     - {fileID: 8197595208149990058, guid: 46a773fb83d14e54890a46a0975e8289, type: 3}
