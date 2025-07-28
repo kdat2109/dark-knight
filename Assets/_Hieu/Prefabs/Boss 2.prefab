@@ -1029,7 +1029,7 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.15582395}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.18163918
 --- !u!114 &3848953862288420060
@@ -1050,7 +1050,7 @@ MonoBehaviour:
     speed: 0
     attackSpeed: 0
   data:
-    health: 3000
+    health: 600
     damage: 1
     speed: 1.5
     attackSpeed: 1
@@ -1102,9 +1102,9 @@ CircleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1903507}
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5634502
+  m_Radius: 0.4
 --- !u!114 &3766664943848605643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3341,7 +3341,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.008726559, z: -0, w: 0.9999619}
   m_LocalPosition: {x: 0, y: -0.32000002, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4286849580523352467}
