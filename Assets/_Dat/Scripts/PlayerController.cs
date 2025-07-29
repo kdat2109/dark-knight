@@ -1,5 +1,6 @@
     using System.Collections;
     using System.Collections.Generic;
+    using _Dat;
     using UnityEngine;
 
     public class PlayerController : MonoBehaviour
@@ -11,14 +12,43 @@
         private Vector2 moveInput;
 
         public Stats stats;
+        public bool isDead = false;
+        Vector3 startPos;
+        
 
         void Start()
         {
+            startPos = transform.position;
             rb = GetComponent<Rigidbody2D>();
+            InitPlayer();
+        }
+
+        public void ResetPos()
+        {
+            transform.position = startPos;
+            Rigidbody2D rb = GetComponent<Rigidbody2D>();
+            if (rb != null)
+            {
+                    rb.velocity = Vector2.zero;
+                    rb.angularVelocity = 0f;
+            }
+        }
+
+        public void InitPlayer()
+        {
+            GetComponent<WeaponController>().Clear();
+            GetComponent<Equipment>().ClearAndReset();
+            stats.Clear();
+            isDead = false;
         }
 
         void Update()
-        {   
+        {
+            if (GameManager.Instance.IsGamePaused || isDead)
+            {
+                moveInput = Vector2.zero;
+                return;
+            }
             // Lấy input từ bàn phím
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
