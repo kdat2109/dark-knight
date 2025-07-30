@@ -28,6 +28,13 @@ public class EnemyBoss : MonoBehaviour
     {
         UIManager.Instance.gameplayUI.HideBossHealthBar();
         
+        WaveSystem waveSystem = FindObjectOfType<WaveSystem>();
+        if (waveSystem != null)
+        {
+            waveSystem.EndWave();
+            waveSystem.ForceEndWave();
+        }
+        
     }
 
     public void Update()
