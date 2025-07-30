@@ -60,33 +60,6 @@ namespace _Dat
             
             
         }
-
-
-
-        /*IEnumerator SpawnEnemies(DataWave wave)
-        {
-            while (true)
-            {
-                yield return new WaitForSeconds(timeSpawn);    
-                
-                int indexEnemy = Random.Range(0, wave.enemies.Length);
-                GameObject enemy = wave.enemies[indexEnemy];
-                
-                int randomCount = Random.Range(wave.min, wave.max);
-                
-                for (int i = 0; i < randomCount; i++)
-                {
-                    int indexPoint = Random.Range(0, spawnPoint.Length);
-
-                    float randomX = Random.Range(-2, 2);
-                    float randomY = Random.Range(-2, 2);
-                    
-                    Vector2 spawnPos = (Vector2)spawnPoint[indexPoint].position + new Vector2(randomX, randomY);
-                    
-                    Instantiate(enemy, spawnPos, Quaternion.identity);
-                }
-            }
-        }*/
         
         IEnumerator SpawnEnemies(DataWave wave)
         {
@@ -130,7 +103,13 @@ namespace _Dat
             if (waveIsRunning)
             {
                 timePlay += Time.deltaTime;
-                UIManager.Instance.gameplayUI.SetTime(timeEndWave-timePlay);
+                
+                float reamainingTime = timeEndWave - timePlay;
+                if (reamainingTime <= 0 && currentBoss != null)
+                {
+                    reamainingTime = 0;
+                }
+                UIManager.Instance.gameplayUI.SetTime(reamainingTime);
 
                 if (timePlay >= timeEndWave && currentBoss == null)
                 {
@@ -141,6 +120,8 @@ namespace _Dat
                     shop.RollItems();
                     GameManager.Instance.IsGamePaused = true;
                 }
+
+                
             }
         }
 
@@ -190,25 +171,6 @@ namespace _Dat
         }
         
         private bool waveIsRunning = false;
-        
-        
-        
-        
-        
-        
-        
-        /*IEnumerator EndWave()
-        {
-            // yield return new WaitForSeconds(timeEndWave);
-            for (int i = 0; i < timeEndWave; i++)
-            {
-                UIManager.Instance.gameplayUI.SetTime(timeEndWave-i);
-                yield return new WaitForSeconds(1);
-            }
-            UIManager.Instance.gameplayUI.SetTime(0);
-
-            StopAllCoroutines();
-        }*/
 
     }
     [Serializable]
