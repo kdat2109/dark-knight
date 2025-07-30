@@ -79,6 +79,8 @@ public class Login : MonoBehaviour
                   {
                         auth = FirebaseAuth.DefaultInstance;
                         Debug.Log("init firebase success");
+                        FirebaseManager.Instance.GetLeaderBoardData(SyncLeaderBoard);
+                        
                   }
                   else
                   {
@@ -87,7 +89,10 @@ public class Login : MonoBehaviour
             });
       }
 
-
+      private void SyncLeaderBoard()
+      {
+            LeaderBoard.Instance.showLeaderBoardUI();
+      }
       public void Logout()
       {
             auth.SignOut();

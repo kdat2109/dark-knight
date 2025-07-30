@@ -10,7 +10,7 @@ public class LeaderBoardUI : MonoBehaviour
 
     public void SetData(string account, int wave)
     {
-        accountText.text = "Account : " + account;
+        accountText.text = account;
         waveText.text = "Wave : " + wave;
     }
 
