@@ -40,6 +40,9 @@ namespace _Dat
            waveIsRunning = false;
            currentWave = wave;
            timePlay = 0;
+           if(currentMap)
+           Destroy(currentMap);
+           defaultMap.SetActive(true);
        }
         public void StartWave()
         {
@@ -110,6 +113,15 @@ namespace _Dat
         
         void Update()
         {
+            if (Input.GetKeyDown(KeyCode.N))
+            {
+                var allItem = shop.SaveEquipment();
+                EndWave();
+                GameManager.Instance.SaveData(currentWave,allItem);
+                shop.ShowShop();
+                shop.RollItems();
+                GameManager.Instance.IsGamePaused = true;
+            }
             if (waveIsRunning)
             {
                 timePlay += Time.deltaTime;
