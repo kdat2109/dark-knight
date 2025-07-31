@@ -63,15 +63,11 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.SetMaxWaveData(waveSystem.currentWave);
         GameManager.Instance.SaveData(0,new List<string>());
         LeaderBoard.Instance.AddData(GameManager.Instance.Profile.name,waveSystem.currentWave);
-        FirebaseManager.Instance.GetLeaderBoardData(SyncLeaderBoard);
         waveSystem.EndWave();
         losePanel.SetActive(true);
     }
 
-    private void SyncLeaderBoard()
-    {
-        LeaderBoard.Instance.showLeaderBoardUI();
-    }
+
 
 
     public void AddGold(int amount)
