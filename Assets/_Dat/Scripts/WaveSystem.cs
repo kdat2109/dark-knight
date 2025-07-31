@@ -25,12 +25,15 @@ namespace _Dat
 
        private GameObject currentBoss;
        
+       public GameObject defaultMap;
+       public GameObject currentMap;
        public void ResetWave()
        {
            waveIsRunning = false;
            currentWave = 0;
            timePlay = 0;
            GameManager.Instance.SaveData(0,new List<string>());
+           defaultMap.SetActive(true);
        }
        public void SetWave(int wave)
        {
@@ -63,6 +66,13 @@ namespace _Dat
         
         IEnumerator SpawnEnemies(DataWave wave)
         {
+            if (wave.map)
+            {
+                defaultMap.SetActive(false);
+                if(currentMap)
+                    Destroy(currentMap);
+                currentMap = Instantiate(wave.map);
+            }
             if (wave.boss)
             {
                 int indexPoint = Random.Range(0, spawnPoint.Length);
@@ -176,6 +186,7 @@ namespace _Dat
     [Serializable]
     public class DataWave
     {
+        public GameObject map;
         public GameObject boss;
         public GameObject[] enemies;
         public int min;
