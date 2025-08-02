@@ -1,5 +1,7 @@
 fileFormatVersion: 2
 guid: 43af0d0e5ab05c943adcc00d13b96bd1
+labels:
+- gvh
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2
@@ -28,7 +30,7 @@ PluginImporter:
     second:
       enabled: 1
       settings:
-        CPU: x86_64
+        CPU: AnyCPU
   - first:
       Standalone: OSXUniversal
     second:

@@ -17,6 +17,8 @@ public class Login : MonoBehaviour
       private TMP_Text messageText,wellcomeText;
       private FirebaseAuth auth;
       public GameObject registerPanel;
+      
+      public GameObject leaderboard;
       public void PrintName()
       {
             string username = inputName.text;
@@ -128,6 +130,7 @@ public class Login : MonoBehaviour
                         UnityMainThreadDispatcher.Instance().Enqueue(() =>
                         {
                               FirebaseManager.Instance.Init();
+                              leaderboard.SetActive(true);
                               FirebaseManager.Instance.LoadData(() =>
                               {
                                     string playerName = GameManager.Instance.Profile.name;
