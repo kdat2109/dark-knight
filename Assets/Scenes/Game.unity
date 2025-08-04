@@ -19865,7 +19865,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &194074963
 Transform:
   m_ObjectHideFlags: 0
@@ -22881,6 +22881,7 @@ GameObject:
   m_Component:
   - component: {fileID: 440737719}
   - component: {fileID: 440737720}
+  - component: {fileID: 440737721}
   m_Layer: 0
   m_Name: 5_Head
   m_TagString: Untagged
@@ -22944,7 +22945,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 3923885903126733222, guid: d24756e433435b249be5737019648d69, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2c422882d6971c42853864927a4123c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -22955,6 +22956,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &440737721
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440737718}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &442310426
 GameObject:
   m_ObjectHideFlags: 0
@@ -23589,7 +23611,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 304.08, y: 223.07}
+  m_AnchoredPosition: {x: 369, y: 223.07}
   m_SizeDelta: {x: 129.3069, y: 133.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &485343660
@@ -23612,7 +23634,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1006441191, guid: 967a5d893b2ab5f4b9df3f3f136a5524, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2c422882d6971c42853864927a4123c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -26997,6 +27019,10 @@ PlayableDirector:
     value: {fileID: 1073139739}
   - key: {fileID: 8341103756712679081, guid: 1407c9fc4f23653469d6c7fb554e38ec, type: 2}
     value: {fileID: 1252097734}
+  - key: {fileID: 4750351948376390774, guid: 1407c9fc4f23653469d6c7fb554e38ec, type: 2}
+    value: {fileID: 194074962}
+  - key: {fileID: 5433688813704205562, guid: 1407c9fc4f23653469d6c7fb554e38ec, type: 2}
+    value: {fileID: 440737721}
   m_ExposedReferences:
     m_References:
     - 3b04390ad46493f4facc43e9c86beef9: {fileID: 1861173428}
@@ -32454,7 +32480,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 25, y: 223.06677}
+  m_AnchoredPosition: {x: -39, y: 223.06677}
   m_SizeDelta: {x: 687.4658, y: 171.8665}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1044532937
@@ -32477,10 +32503,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dark Knight
+  m_text: "Khoai t\xE2y b\u1EAFn ph\xE1"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: b3d7f314b1f952e42a19b841e347e084, type: 2}
-  m_sharedMaterial: {fileID: -4182152718911085380, guid: b3d7f314b1f952e42a19b841e347e084, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 34b4714ed444b874b95ac8196712ee9a, type: 2}
+  m_sharedMaterial: {fileID: -6018040784557470849, guid: 34b4714ed444b874b95ac8196712ee9a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -33214,7 +33240,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1089876318
 Transform:
   m_ObjectHideFlags: 0
@@ -36207,7 +36233,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 3923885903126733222, guid: d24756e433435b249be5737019648d69, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2c422882d6971c42853864927a4123c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -63072,7 +63098,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1986787081
 RectTransform:
   m_ObjectHideFlags: 0
@@ -63089,7 +63115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -254.08, y: 223.07}
+  m_AnchoredPosition: {x: -371, y: 223.07}
   m_SizeDelta: {x: 129.3069, y: 133.92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1986787082
@@ -63112,7 +63138,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1006441191, guid: 967a5d893b2ab5f4b9df3f3f136a5524, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2c422882d6971c42853864927a4123c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -63374,7 +63400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2012675063
 RectTransform:
   m_ObjectHideFlags: 0
