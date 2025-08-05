@@ -77,7 +77,6 @@ public class Shop : MonoBehaviour
         equipment.Equip(item);
         ShowShop();
         UpdateBuyButton();
-
     }
 
     void UpdateBuyButton()
@@ -119,9 +118,17 @@ public class Shop : MonoBehaviour
 
     public void RollItems()
     {
-        for (int i = 0; i < upgrades.Count; i++)
+        if (UIManager.Instance.gold >= 1)
         {
-            upgrades[i].Init(totalItems[Random.Range(0, totalItems.Length)],this);
+            UIManager.Instance.AddGold(-1);
+            for (int i = 0; i < upgrades.Count; i++)
+            {
+                upgrades[i].Init(totalItems[Random.Range(0, totalItems.Length)],this);
+            }
+        }
+        else
+        {
+            Debug.Log("Không đủ vàng để roll");
         }
     }
 
