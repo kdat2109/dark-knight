@@ -2394,7 +2394,7 @@ MonoBehaviour:
     fontSize: 4
     text: "Mu\u1ED1n c\u1EE9u l\u1EA5y c\xF4ng ch\xFAa v\xE0 tr\u1EDF v\u1EC1 tr\u1EA1ng
       th\xE1i ban \u0111\u1EA7u th\xEC theo ta \u0111\u1EBFn th\u1EBF gi\u1EDBi ph\xE9p
-      thu\u1EADt kakaka"
+      thu\u1EADt c\u1EE7a ta kakaka"
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4631,7 +4631,7 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: "Mu\u1ED1n c\u1EE9u l\u1EA5y c\xF4ng ch\xFAa v\xE0 tr\u1EDF v\u1EC1
       tr\u1EA1ng th\xE1i ban \u0111\u1EA7u th\xEC theo ta \u0111\u1EBFn th\u1EBF
-      gi\u1EDBi ph\xE9p thu\u1EADt kakaka"
+      gi\u1EDBi ph\xE9p thu\u1EADt c\u1EE7a ta kakaka"
   m_Markers:
     m_Objects: []
 --- !u!114 &8398645201538077215
