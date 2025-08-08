@@ -134,6 +134,7 @@ public class Login : MonoBehaviour
                               FirebaseManager.Instance.LoadData(() =>
                               {
                                     string playerName = GameManager.Instance.Profile.name;
+                                    UIManager.Instance.gameplayUI.userPlayer.text = playerName;
                                     wellcomeText.text = $"Chào mừng trở lại {playerName}";
                                     gameObject.SetActive(false);
                               });

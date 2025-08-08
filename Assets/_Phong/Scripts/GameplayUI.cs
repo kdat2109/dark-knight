@@ -16,6 +16,9 @@ public class GameplayUI : MonoBehaviour
     public TMP_Text waveText;
     public TMP_Text timeText;
     public TMP_Text healthText;
+    
+    public TMP_Text userPlayer;
+
     [SerializeField]
     private MiniHealthBar bossHealthBar;
 
