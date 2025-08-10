@@ -18,6 +18,9 @@ public class UIManager : MonoBehaviour
 
     [SerializeField]
     private PlayerController player;
+
+    [SerializeField]
+    private Transform leaderBoardLose;
     
     void Awake()
     {
@@ -64,6 +67,7 @@ public class UIManager : MonoBehaviour
         GameManager.Instance.SetMaxWaveData(waveSystem.currentWave);
         GameManager.Instance.SaveData(0,new List<string>());
         LeaderBoard.Instance.AddData(GameManager.Instance.Profile.name,waveSystem.currentWave);
+        LeaderBoard.Instance.ShowLeaderBoardUI(leaderBoardLose);
         waveSystem.EndWave();
         losePanel.SetActive(true);
     }

@@ -14,7 +14,8 @@
         public Stats stats;
         public bool isDead = false;
         Vector3 startPos;
-        
+
+        public Joystick joystick;
 
         void Start()
         {
@@ -53,6 +54,10 @@
             moveInput.x = Input.GetAxisRaw("Horizontal");
             moveInput.y = Input.GetAxisRaw("Vertical");
 
+            if (joystick.Direction != Vector2.zero)
+            {
+                moveInput = new Vector2(joystick.Direction.x, joystick.Direction.y);
+            }
             // Chuẩn hóa để tốc độ không nhanh hơn khi đi chéo
             moveInput = moveInput.normalized;
 

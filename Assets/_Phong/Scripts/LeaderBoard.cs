@@ -91,6 +91,22 @@ public class LeaderBoard : MonoBehaviour
             LeaderBoardUI item =  go.GetComponent<LeaderBoardUI>();
             item.SetData(d.account, d.wave + 1);
         }
+    }    
+    public void ShowLeaderBoardUI(Transform parent)
+    {
+        foreach (Transform child in parent)
+        {
+            Destroy(child.gameObject);   
+        }
+        
+        data.Sort((a, b) => b.wave.CompareTo(a.wave));
+
+        foreach (var d in data)
+        {
+            GameObject go = Instantiate(leaderBoardItemPrefab, parent);
+            LeaderBoardUI item =  go.GetComponent<LeaderBoardUI>();
+            item.SetData(d.account, d.wave + 1);
+        }
     }
 
 }
