@@ -22,6 +22,7 @@ public class UpgradeUI : MonoBehaviour
     
     
     
+    
     public void Init(EquipItem equipItem, Shop shop)
     {
         this.shop = shop;
@@ -30,9 +31,6 @@ public class UpgradeUI : MonoBehaviour
         image.sprite = equipItem.image.sprite;
         goldText.text = "-" + equipItem.gold;
         itemNameText.text = equipItem.itemName;
-        
-      
-        
         
         
         string info = "";
@@ -102,9 +100,13 @@ public class UpgradeUI : MonoBehaviour
     
     private void Buy()
     {
-        shop.Equip(currentEquipItem);
-        Debug.Log($"equip item {currentEquipItem.name}");
-        gameObject.SetActive(false);
+        if (shop.Equip(currentEquipItem))
+        {
+            Debug.Log($"equip item {currentEquipItem.name}");
+            gameObject.SetActive(false);
+        }
+
+       
     }
     
   

@@ -71,14 +71,33 @@ public class Shop : MonoBehaviour
         goWave.onClick.AddListener(NextWave);
     }
     
-    public void Equip(EquipItem item)
+    public bool Equip(EquipItem item)
     {
+        var weaponController = equipment.GetComponent<WeaponController>();
+        Weapon weapon = item.GetComponent<Weapon>();
+        
+        if (weapon != null && weaponController != null)
+        {
+            if (weaponController.weapons.Count >= weaponController.slots.Count)
+            {
+                Debug.Log("Da full slot vu khi");
+                return false;
+            }
+        }
+        
+        if (UIManager.Instance.gold < item.gold)
+        {
+            Debug.Log("Khong du vang");
+            return false;
+        }
+        
         UIManager.Instance.AddGold(-item.gold);
         equipment.Equip(item);
+
         ShowShop();
         UpdateBuyButton();
+        return true;
     }
-
     void UpdateBuyButton()
     {
         for (int i = 0; i < upgrades.Count; i++)
@@ -128,7 +147,7 @@ public class Shop : MonoBehaviour
         }
         else
         {
-            Debug.Log("Không đủ vàng để roll");
+            Debug.Log("ko du vang de roll");
         }
     }
 
