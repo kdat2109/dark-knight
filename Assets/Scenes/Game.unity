@@ -39334,6 +39334,8 @@ MonoBehaviour:
   shop: {fileID: 2162931188308944417}
   defaultMap: {fileID: 1293864500}
   currentMap: {fileID: 0}
+  outro: {fileID: 1069654426}
+  player: {fileID: 1523509260}
 --- !u!114 &623143066
 MonoBehaviour:
   m_ObjectHideFlags: 0
