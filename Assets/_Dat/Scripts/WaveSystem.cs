@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.Timeline;
@@ -62,6 +63,8 @@ namespace _Dat
             {
                 Debug.Log("xong het wave");
                 StartCoroutine(StartOutro());
+                GameManager.Instance.Profile.currentWave = 0;
+                FirebaseManager.Instance.SetData();
                 return;
             }
 
@@ -78,7 +81,7 @@ namespace _Dat
         {
             player.SetActive(false);
             outro.gameObject.SetActive(true);
-            yield return new WaitForSeconds((float)outro.duration);
+            yield return new WaitForSeconds(7);
             outro.gameObject.SetActive(false);
             player.SetActive(true);
             UIManager.Instance.ShowWinPanel();
