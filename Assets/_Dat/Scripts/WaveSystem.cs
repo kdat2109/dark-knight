@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
+using UnityEngine.Timeline;
 using Random = UnityEngine.Random;
 
 namespace _Dat
@@ -27,6 +29,11 @@ namespace _Dat
        
        public GameObject defaultMap;
        public GameObject currentMap;
+       [SerializeField]
+       private PlayableDirector outro;
+
+       [SerializeField]
+       private GameObject player;
        public void ResetWave()
        {
            waveIsRunning = false;
@@ -54,7 +61,7 @@ namespace _Dat
             if (currentWave >= waves.Length)
             {
                 Debug.Log("xong het wave");
-                UIManager.Instance.ShowWinPanel();
+                StartCoroutine(StartOutro());
                 return;
             }
 
@@ -65,6 +72,16 @@ namespace _Dat
             shop.RollItems();
             
             
+        }
+
+        IEnumerator StartOutro()
+        {
+            player.SetActive(false);
+            outro.gameObject.SetActive(true);
+            yield return new WaitForSeconds((float)outro.duration);
+            outro.gameObject.SetActive(false);
+            player.SetActive(true);
+            UIManager.Instance.ShowWinPanel();
         }
         
         IEnumerator SpawnEnemies(DataWave wave)
