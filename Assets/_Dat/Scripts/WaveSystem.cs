@@ -64,6 +64,8 @@ namespace _Dat
                 Debug.Log("xong het wave");
                 StartCoroutine(StartOutro());
                 GameManager.Instance.Profile.currentWave = 0;
+                GameManager.Instance.Profile.gold = 10;
+                GameManager.Instance.Profile.dataEquip = new List<string>();
                 FirebaseManager.Instance.SetData();
                 return;
             }
